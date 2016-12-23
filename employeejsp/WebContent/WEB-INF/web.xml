@@ -18,51 +18,11 @@
     <url-pattern>/InsertServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>search</servlet-name>
-    <servlet-class>com.employeejsp.SearchServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>search</servlet-name>
-    <url-pattern>/SearchServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>update</servlet-name>
-    <servlet-class>com.employeejsp.UpdateServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>update</servlet-name>
-    <url-pattern>/UpdateServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <servlet-name>delete</servlet-name>
     <servlet-class>com.employeejsp.DeleteServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>delete</servlet-name>
     <url-pattern>/DeleteServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>Loan</servlet-name>
-    <servlet-class>com.employeejsp.LoanServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Loan</servlet-name>
-    <url-pattern>/LoanServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>SearchName</servlet-name>
-    <servlet-class>com.employeejsp.SearchName</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>SearchName</servlet-name>
-    <url-pattern>/SearchName</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>SearchSalary</servlet-name>
-    <servlet-class>com.employeejsp.SearchSlary</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>SearchSalary</servlet-name>
-    <url-pattern>/Searchsalary</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -14,14 +14,14 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class SearchSlary
  */
-//@WebServlet("/SearchSlary")
-public class SearchSlary extends HttpServlet {
+@WebServlet("/searchsal")
+public class searchsal extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchSlary() {
+    public searchsal() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,7 +38,7 @@ public class SearchSlary extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-String searchElement=request.getParameter("searchsalary");
+String searchElement=request.getParameter("searchElement");
 		double sal=Double.parseDouble(searchElement);
 		DAOOperations dao=new DAOOperations();
 		
@@ -47,7 +47,7 @@ String searchElement=request.getParameter("searchsalary");
 		
 		HttpSession session=request.getSession();
 		session.setAttribute("employeeList", empList);
-		RequestDispatcher requestDis=request.getRequestDispatcher("Search.jsp");
+		RequestDispatcher requestDis=request.getRequestDispatcher("searchsal.jsp");
 		
 		requestDis.forward(request, response);
 	}

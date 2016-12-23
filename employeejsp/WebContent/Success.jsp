@@ -9,7 +9,7 @@
 <body>
 
 <%
-String employeeId=(String)session.getAttribute("employeeId");
+String employeeId=(String)session.getAttribute("employeeid");
 
 out.print("Your employee Id " +employeeId);
 

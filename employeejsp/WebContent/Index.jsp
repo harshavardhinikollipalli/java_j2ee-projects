@@ -11,7 +11,7 @@
 <h1>DhatriInfo Solutions</h1>
 
 <a href="Insert.jsp">Add an Employee</a>
-<a href="Search.jsp">Search</a>
+<a href="search1.jsp">Search</a>
 <a href="Delete.jsp">Delete</a>
 <a href="Update.jsp">Update</a>
 <a href="Loan.jsp">Loan</a>

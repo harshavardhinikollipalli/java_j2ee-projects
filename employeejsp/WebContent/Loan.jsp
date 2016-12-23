@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Insert title here</title>s
 </head>
 <body style="background-color:Moccasin">
 <div align="center">
@@ -25,7 +25,9 @@
 
 <input type="submit" value="Submit"/>
 </form>
-
+<form action="Index.jsp", method="post"/>
+ <input type="submit" value="go to the home page"/>
+</form>
 </div>
 </body>
 </html>

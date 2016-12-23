@@ -3,10 +3,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script type="text/javascript">
-function validation()
+<script src="insert.js">
+/* function validation()
 {
-var employeeId=document.getElementById("employeeId").value;
+var employeeId=document.getElementById("employeeid").value;
 if(empid==" "||empid==null)
 	{
 	//alert("enter employeeid");
@@ -20,7 +20,7 @@ else
 function clearField()
 {
 	document.getElementById("error").innerHTML=" ";
-}
+} */
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert</title>
@@ -33,8 +33,8 @@ function clearField()
 
  <table>
     <tr>
-     <td>Enter Employee Id: <sup id="dot">.....</sup> </td>
-      <td><input type="text" name="empid" id="employeeId" onkeypress="return clearField()"/></td>
+     <td>Enter Employee Id: <sup id="star">*</sup> </td>
+      <td><input type="text" name="employeeid" id="employeeid" onkeypress="return clearField()"/></td>
       <td> <span id="error"></span> </td>
       
     </tr>
@@ -61,7 +61,9 @@ function clearField()
 
 <input type="submit" value="Submit" onclick="return validation()">
 </form>
-
+<form action="Index.jsp", method="post"/>
+ <input type="submit" value="go to the home page"/>
+</form>
 </div>
 
 </body>

@@ -7,6 +7,7 @@ public class EmployeeBean {
 	private int employeeLoan;
 	private int employeeExp;
 	private String employeeLoc;
+	private int employeeEmi;
 	
 	public String getEmployeeId() {
 		return employeeId;
@@ -44,6 +45,12 @@ public class EmployeeBean {
 	}
 	public void setEmployeeLoc(String employeeLoc) {
 		this.employeeLoc = employeeLoc;
+	}
+	public int getEmployeeEmi() {
+		return employeeEmi;
+	}
+	public void setEmployeeEmi(int employeeEmi) {
+		this.employeeEmi= employeeEmi;
 	}
 
 }

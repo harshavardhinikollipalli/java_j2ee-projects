@@ -13,7 +13,7 @@
 
 <form action="SearchServlet" method="post">
 
-Enter id/name/sal to search:<input type="text" name="searchElement" placeholder="searchElement"/>
+Enter id to  search:<input type="text" name="searchElement" />
 
 <input type="submit" value="Search">
 </form>

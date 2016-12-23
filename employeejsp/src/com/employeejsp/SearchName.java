@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class SearchName
  */
-//@WebServlet("/SearchName")
+@WebServlet("/SearchName")
 public class SearchName extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -38,7 +38,7 @@ public class SearchName extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-String searchElement=request.getParameter("searchName");
+String searchElement=request.getParameter("searchElement");
 		
 		DAOOperations dao=new DAOOperations();
 		
@@ -47,7 +47,7 @@ String searchElement=request.getParameter("searchName");
 		
 		HttpSession session=request.getSession();
 		session.setAttribute("employeeList", empList);
-		RequestDispatcher requestDis=request.getRequestDispatcher("Search.jsp");
+		RequestDispatcher requestDis=request.getRequestDispatcher("searchname.jsp");
 		
 		requestDis.forward(request, response);
 	}

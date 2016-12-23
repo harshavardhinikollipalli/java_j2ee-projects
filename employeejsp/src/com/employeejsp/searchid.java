@@ -2,7 +2,7 @@ package com.employeejsp;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.util.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,18 +13,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-
 /**
- * Servlet implementation class LoanServlet
+ * Servlet implementation class SearchServlet
  */
-@WebServlet("/LoanServlet")
-public class LoanServlet extends HttpServlet {
+@WebServlet("/SearchServlet")
+public class searchid extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoanServlet() {
+    public searchid() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,27 +40,23 @@ public class LoanServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	
-		EmployeeBean e=new EmployeeBean();
-		response.setContentType("text/html");  
-		PrintWriter out=response.getWriter();
-		String eid=request.getParameter("id");
-	
-		DAOOperations dbo=new DAOOperations();
+String searchElement=request.getParameter("searchElement");
+
+
+PrintWriter out=response.getWriter();
+		DAOOperations dao=new DAOOperations();
 		
-		 ArrayList<EmployeeBean> empList=dbo.loan(eid);
-	
-RequestDispatcher requestDispact=request.getRequestDispatcher("loan1.jsp");
+    ArrayList<EmployeeBean> empList=dao.search(searchElement);
+		
 		
 		HttpSession session=request.getSession();
 		session.setAttribute("employeeList", empList);
+		RequestDispatcher requestDis=request.getRequestDispatcher("Searchid.jsp");
 		
+		requestDis.forward(request, response);
 		
+		}
 		
-			requestDispact.forward(request, response);
-		
-
-	}
-	}
-
-
+						
+	
+}

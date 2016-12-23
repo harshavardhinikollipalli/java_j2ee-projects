@@ -37,7 +37,7 @@ public class InsertServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String employeeId=request.getParameter("employeeId");
+		String employeeId=request.getParameter("employeeid");
 		String employeeName=request.getParameter("employeeName");
 		String employeeSalary=request.getParameter("employeeSalary");
 		String employeeLocation=request.getParameter("employeeLocation");
@@ -69,7 +69,7 @@ public class InsertServlet extends HttpServlet {
 		RequestDispatcher requestDispact=request.getRequestDispatcher("Success.jsp");
 		
 		HttpSession session=request.getSession();
-		session.setAttribute("employeeId", employeeId);
+		session.setAttribute("employeeid", employeeId);
 		
 		if(result>0)
 		{

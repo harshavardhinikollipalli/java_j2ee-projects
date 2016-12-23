@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class UpdateServlet
  */
-//@WebServlet("/UpdateServlet")
+@WebServlet("/UpdateServlet")
 public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -44,19 +44,19 @@ public class UpdateServlet extends HttpServlet {
 		EmployeeBean e=new EmployeeBean();
 		response.setContentType("text/html");  
 		PrintWriter out=response.getWriter();
-		String eid=request.getParameter("id");
-		String ename=request.getParameter("name");
-		String esal=request.getParameter("sal");
-		String eloc=request.getParameter("loc");
-		String eexp=request.getParameter("exp");
-		String eloan=request.getParameter("loan");
+		String eid=request.getParameter("eid");
+		String ename=request.getParameter("ename");
+		String esal=request.getParameter("esal");
+		String eloc=request.getParameter("eloc");
+		String eexp=request.getParameter("eexp");
+		//String eloan=request.getParameter("eloan");
 		double sal;
 		int exp,loan;
 		try
 		{
 			sal=Double.parseDouble(esal);
 			exp=Integer.parseInt(eexp);
-			loan=Integer.parseInt(eloan);
+			//loan=Integer.parseInt(eloan);
 		}
 		catch(Exception m)
 		{
@@ -68,14 +68,14 @@ public class UpdateServlet extends HttpServlet {
 		e.setEmployeeSlary(sal);
 		e.setEmployeeLoc(eloc);
 		e.setEmployeeExp(exp);
-		e.setEmployeeLoan(loan);
+		//e.setEmployeeLoan(loan);
 		
 		DAOOperations dbo=new DAOOperations();
 		int x=dbo.update(e);
 RequestDispatcher requestDispact=request.getRequestDispatcher("Success.jsp");
 		
 		HttpSession session=request.getSession();
-		session.setAttribute("id", eid);
+		session.setAttribute("employeeid", eid);
 		
 		if(x>0)
 		{
