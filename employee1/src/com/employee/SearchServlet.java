@@ -42,25 +42,22 @@ PrintWriter out=response.getWriter();
 		
 		DataBaseOperations dbo=new DataBaseOperations();
 		
-		ArrayList<Employee> employeeList=dbo.search(searchElement);
-		
-		Employee employeebean=null;
+		ArrayList<Employee> empList=dbo.search(searchElement);
 		HttpSession session=request.getSession();
+		session.setAttribute("employeeList", empList);
 		Object obj=session.getAttribute("employeeList");
+		if(obj!=null)
+		{
+		out.print("EmployeeId \t EmployeeName \t EmployeeSalary \t EmployeeLoc \t EmployeeExp \t EmployeeLoan");
+		ArrayList<Employee> employeeList=(ArrayList)obj;
 		Iterator iterator=employeeList.iterator();
+		Employee employeebean;
 		while(iterator.hasNext())
 		{
-			employeebean=(Employee)iterator.next();
-			
-	employeebean.getEmployeeId();	
-	employeebean.getEmployeeSlary() ;
-	employeebean.getEmployeeLoc();
-	employeebean.getEmployeeExp(); 
-			
-			
+		employeebean=(Employee)iterator.next();
+		out.println(employeebean.getEmployeeId()+"\t"+employeebean.getEmployeeName()+"\t"+employeebean.getEmployeeSlary()+"\t"+employeebean.getEmployeeLoc()+"\t"+employeebean.getEmployeeExp()+"\t"+employeebean.getEmployeeLoan());
 		}
-		session.removeAttribute("employeeList");
-		
+		}
 		
 	}
 
