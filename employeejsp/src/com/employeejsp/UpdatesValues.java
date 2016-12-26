@@ -1,6 +1,7 @@
 package com.employeejsp;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -39,6 +40,8 @@ public class UpdatesValues extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String tempid=request.getParameter("updateVariable");
+		PrintWriter out=response.getWriter();
+		
 		
 		DAOOperations dbo=new DAOOperations();
 		
@@ -51,6 +54,8 @@ public class UpdatesValues extends HttpServlet {
 		
 		requestDis.forward(request, response);
 		
+	
+	
+	
 	}
-
 }

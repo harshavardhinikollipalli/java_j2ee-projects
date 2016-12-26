@@ -44,6 +44,8 @@ public class UpdateServlet extends HttpServlet {
 		EmployeeBean e=new EmployeeBean();
 		response.setContentType("text/html");  
 		PrintWriter out=response.getWriter();
+		
+		
 		String eid=request.getParameter("eid");
 		String ename=request.getParameter("ename");
 		String esal=request.getParameter("esal");
@@ -82,6 +84,7 @@ RequestDispatcher requestDispact=request.getRequestDispatcher("Success.jsp");
 			requestDispact.forward(request, response);
 		}
 		
+	
 	}
-
+	
 }

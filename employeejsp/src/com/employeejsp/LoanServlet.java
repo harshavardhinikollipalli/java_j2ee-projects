@@ -43,8 +43,11 @@ public class LoanServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 	
 		EmployeeBean e=new EmployeeBean();
-		response.setContentType("text/html");  
+		response.setContentType("text/html");
+		
 		PrintWriter out=response.getWriter();
+		try
+		{
 		String eid=request.getParameter("id");
 	
 		DAOOperations dbo=new DAOOperations();
@@ -59,7 +62,15 @@ RequestDispatcher requestDispact=request.getRequestDispatcher("loan1.jsp");
 		
 		
 			requestDispact.forward(request, response);
-		
+	}
+		catch(Exception h)
+	{
+		out.println("enter correct id");
+		out.println("<html><body>");
+		out.println("<form action='Loan.jsp'/>");
+		out.println("<input type='submit' value='back'/> ");
+		out.println("<html/><body/>");
+	}
 
 	}
 	}
