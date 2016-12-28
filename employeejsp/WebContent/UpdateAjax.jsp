@@ -16,7 +16,7 @@
 
 <script language="javascript" type="text/javascript">  
 var xmlHttp;  
-var xmlHttp;
+
 function showResult(updateVariable){
 if (typeof XMLHttpRequest != "undefined"){
 xmlHttp= new XMLHttpRequest();

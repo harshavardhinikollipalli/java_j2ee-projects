@@ -4,23 +4,7 @@
 <html>
 <head>
 <script src="insert.js">
-/* function validation()
-{
-var employeeId=document.getElementById("employeeid").value;
-if(empid==" "||empid==null)
-	{
-	//alert("enter employeeid");
-	document.getElementById(employeeId).innerHTML="please enter id";
-	return false;
-	}
-else
-	
-	return true;
-}
-function clearField()
-{
-	document.getElementById("error").innerHTML=" ";
-} */
+
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert</title>
@@ -40,8 +24,9 @@ function clearField()
     </tr>
 
     <tr>
-      <td>Enter Employee Name:</td>
-      <td><input type="text" name="employeeName" /></td>
+      <td>Enter Employee Name: <sup id="star">*</sup> </td>
+      <td><input type="text" name="employeeName" id="employeename" onkeypress="return clearField()" /></td>
+       <td> <span id="error"></span> </td>
     </tr>
 
     <tr>

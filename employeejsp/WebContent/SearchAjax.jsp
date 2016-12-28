@@ -12,7 +12,7 @@
 </head>
 <script language="javascript" type="text/javascript">  
 var xmlHttp;  
-var xmlHttp;
+
 function showResult(searchVariable){
 if (typeof XMLHttpRequest != "undefined"){
 xmlHttp= new XMLHttpRequest();
@@ -23,7 +23,7 @@ xmlHttp= new XMLHttpRequest();
   xmlHttp= new ActiveXObject("Microsoft.XMLHTTP");
   }
   if (xmlHttp==null){
-  alert("Browser does not support XMLHTTP Request")
+  alert("Browser does not support XMLHTTP Request");
   return;
   } 
   var url="SearchResult.jsp";
