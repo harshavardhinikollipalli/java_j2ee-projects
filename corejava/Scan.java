@@ -8,7 +8,7 @@ public class Scan {
 	int id=sc.nextInt();
 	System.out.println("enter name");
 	String name=sc.next();
-	System.out.println("enter salary");
+	System.out.println("enter salary");                                                         
 	float sal=sc.nextFloat();
 	System.out.println("id= " +id+" "+"name= " +name+ " "+"salary= " +sal);
 	
