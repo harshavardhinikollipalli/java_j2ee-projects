@@ -1,10 +1,7 @@
-package com.employeejsp;
+package com.user.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,17 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.user.bean.UserBean;
+import com.user.dboperations.Dboperations;
+
 /**
- * Servlet implementation class UpdatesValues
+ * Servlet implementation class Update3Servlet
  */
-@WebServlet("/UpdatesValues")
-public class UpdatesValues extends HttpServlet {
+@WebServlet("/Update3Servlet")
+public class Update3Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdatesValues() {
+    public Update3Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,6 +32,10 @@ public class UpdatesValues extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session=request.getSession();
+		UserBean employeeBean=(UserBean)session.getAttribute("userbean");
+		Dboperations dbo=new Dboperations();
+		dbo.update(employeeBean);
 	}
 
 	/**
@@ -39,23 +43,6 @@ public class UpdatesValues extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String tempid=request.getParameter("search");
-		PrintWriter out=response.getWriter();
-		
-		
-		DAOOperations dbo=new DAOOperations();
-		
-		
-		ArrayList<EmployeeBean> empList=dbo.search(tempid);
-		
-		HttpSession session=request.getSession();
-		session.setAttribute("employeeList", empList);
-		RequestDispatcher requestDis=request.getRequestDispatcher("Update.jsp");
-		
-		requestDis.forward(request, response);
-		
-	
-	
-	
 	}
+
 }

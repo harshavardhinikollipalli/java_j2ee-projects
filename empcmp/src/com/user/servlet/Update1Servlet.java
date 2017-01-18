@@ -1,4 +1,4 @@
-package com.employeejsp;
+package com.user.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,17 +12,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.user.bean.CompanyBean;
+import com.user.bean.UserBean;
+import com.user.dboperations.Dboperations;
+
 /**
- * Servlet implementation class UpdatesValues
+ * Servlet implementation class Update1Servlet
  */
-@WebServlet("/UpdatesValues")
-public class UpdatesValues extends HttpServlet {
+@WebServlet("/Update1Servlet")
+public class Update1Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdatesValues() {
+    public Update1Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,23 +43,31 @@ public class UpdatesValues extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String tempid=request.getParameter("search");
-		PrintWriter out=response.getWriter();
-		
-		
-		DAOOperations dbo=new DAOOperations();
-		
-		
-		ArrayList<EmployeeBean> empList=dbo.search(tempid);
-		
 		HttpSession session=request.getSession();
-		session.setAttribute("employeeList", empList);
-		RequestDispatcher requestDis=request.getRequestDispatcher("Update.jsp");
+		String employeeid=(String)session.getAttribute("empid");
+		PrintWriter out=response.getWriter();
+		 if(employeeid!=null)
+		 {
+			 ArrayList<UserBean> emplist=new ArrayList<UserBean>();
+			 
+			 Dboperations dbo=new Dboperations();
+			 emplist=dbo.userprofile(employeeid);
+			 session.setAttribute("employeelist", emplist);
+			 
+			 
+			 RequestDispatcher ref1=request.getRequestDispatcher("update.jsp");
+			 ref1.forward(request, response);
+			
+			 
+			 
+		 }
+		 else
+		 {
+			 RequestDispatcher ref=request.getRequestDispatcher("employeeprofile.jsp");
+			 ref.include(request, response);
+			 out.print("Wrong");
+		 }
 		
-		requestDis.forward(request, response);
-		
-	
-	
-	
 	}
+
 }
